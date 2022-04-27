@@ -9,41 +9,45 @@ import 'package:ui_task_1/utils/widget_functions.dart';
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     final ThemeData themeData = Theme.of(context);
-    final double padding = 25;
-    final sidePadding = EdgeInsets.symmetric(horizontal: padding);
+    const double padding = 25;
 
     return SafeArea(
         child: Scaffold(
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 BorderIcon(
                   height: 40,
                   width: 40,
-                  child: Icon(Icons.short_text_rounded),
+                  child: Icon(
+                    Icons.short_text_rounded,
+                    size: 35,
+                  ),
                 ),
                 BorderIcon(
                   height: 40,
                   width: 40,
-                  child: Icon(Icons.search),
+                  child: Icon(
+                    Icons.search,
+                    size: 35,
+                  ),
                 )
               ],
             ),
           ),
-          addVerticalSpace(20),
+          addVerticalSpace(15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 25),
+                    padding: const EdgeInsets.only(left: padding),
                     child: SizedBox(
                       child: Text(
                         "Week in Paris",
@@ -52,7 +56,7 @@ class MainScreen extends StatelessWidget {
                     ),
                   )),
               Padding(
-                padding: EdgeInsets.only(left: 25),
+                padding: EdgeInsets.only(left: padding),
                 child: SizedBox(
                   child: Text(
                     "2021 Fashion show in Paris",
@@ -67,16 +71,21 @@ class MainScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding: const EdgeInsets.symmetric(horizontal: padding),
                 child: Text(
                   "Explore",
                   style: themeData.textTheme.headline3,
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.symmetric(horizontal: padding),
                 child: BorderIcon(
-                    height: 40, width: 40, child: Icon(Icons.filter_list)),
+                    height: 40,
+                    width: 40,
+                    child: Icon(
+                      Icons.filter_list,
+                      size: 25,
+                    )),
               )
             ],
           ),
@@ -89,7 +98,7 @@ class MainScreen extends StatelessWidget {
                     .map((filter) => ChoiceOption(text: filter))
                     .toList()),
           ),
-          addVerticalSpace(10),
+          addVerticalSpace(12),
           SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Row(
@@ -100,6 +109,28 @@ class MainScreen extends StatelessWidget {
               ],
             ),
           ),
+          addVerticalSpace(20),
+          SizedBox(
+            height: 160,
+            width: 330,
+            child: DecoratedBox(
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(
+                    color: COLOR_PURPLE.withRed(90).withAlpha(120),
+                    spreadRadius: 5,
+                    blurRadius: 25,
+                    blurStyle: BlurStyle.normal,
+                    offset: const Offset(0, 15)),
+              ]),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: Image.asset(
+                  FA_DATA[2]["image"]!,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     ));
@@ -115,16 +146,19 @@ class ChoiceOption extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
 
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
-        color: COLOR_WHITE,
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
-      margin: const EdgeInsets.only(left: 25),
-      child: Text(
-        text,
-        style: themeData.textTheme.headline4,
+    return GestureDetector(
+      onTap: () => {debugPrint("ChoiceOption is being tapped!")},
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          color: COLOR_WHITE,
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
+        margin: const EdgeInsets.only(left: 25),
+        child: Text(
+          text,
+          style: themeData.textTheme.headline4,
+        ),
       ),
     );
   }
@@ -145,7 +179,7 @@ class PersonItem extends StatelessWidget {
         DecoratedBox(
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
-                color: COLOR_PURPLE.withRed(90).withAlpha(90),
+                color: COLOR_PURPLE.withRed(90).withAlpha(120),
                 spreadRadius: 5,
                 blurRadius: 25,
                 blurStyle: BlurStyle.normal,
@@ -156,7 +190,7 @@ class PersonItem extends StatelessWidget {
             child: Image.asset(
               itemData["image"],
               height: 200,
-              width: 170,
+              width: 150,
               fit: BoxFit.cover,
             ),
           ),

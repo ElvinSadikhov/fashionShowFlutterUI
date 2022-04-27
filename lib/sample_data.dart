@@ -8,5 +8,8 @@ const FA_DATA = [
     "image": "assets/images/ui_task_1_2.png",
     "name": "Trisha Louls",
     "city": "London"
+  },
+  {
+    "image": "assets/images/ui_task_1_3.png",
   }
 ];

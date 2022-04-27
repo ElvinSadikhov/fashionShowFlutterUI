@@ -14,15 +14,18 @@ class BorderIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      decoration: const BoxDecoration(
-        color: COLOR_WHITE,
-        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-      ),
-      child: Center(
-        child: child,
+    return GestureDetector(
+      onTap: () => {debugPrint("BorderIcon is being tapped!")},
+      child: Container(
+        width: width,
+        height: height,
+        decoration: const BoxDecoration(
+          color: COLOR_WHITE,
+          borderRadius: BorderRadius.all(Radius.circular(15.0)),
+        ),
+        child: Center(
+          child: child,
+        ),
       ),
     );
   }
