@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ui_task_1/utils/constants.dart';
 
 class BorderIcon extends StatelessWidget {
   final Widget child;

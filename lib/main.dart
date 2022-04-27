@@ -19,5 +19,5 @@ class Main extends StatelessWidget {
 }
 
 void main() {
-  runApp(Main());
+  runApp(const Main());
 }

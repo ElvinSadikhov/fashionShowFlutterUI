@@ -5,6 +5,8 @@ import 'package:ui_task_1/utils/constants.dart';
 import 'package:ui_task_1/utils/widget_functions.dart';
 
 class MainScreen extends StatelessWidget {
+  const MainScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
