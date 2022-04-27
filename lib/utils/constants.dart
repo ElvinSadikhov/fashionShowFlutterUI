@@ -10,7 +10,9 @@ const COLOR_GREY = Colors.grey;
 
 const COLOR_PURPLE = Color.fromRGBO(103, 65, 209, 100);
 
-const TextTheme DEFAULT_TEXT_THEME = TextTheme(
+const COLOR_RED = Colors.red;
+
+const TextTheme TEXT_THEME_FIRST_PAGE = TextTheme(
     // for Week in Paris
     headline1: TextStyle(
         fontFamily: "RadioCanada",
@@ -47,3 +49,30 @@ const TextTheme DEFAULT_TEXT_THEME = TextTheme(
         color: COLOR_BLACK,
         fontWeight: FontWeight.w500,
         fontSize: 15));
+
+const TextTheme TEXT_THEME_SECOND_PAGE = TextTheme(
+  // for messages, likes, watched counts
+  headline1: TextStyle(
+      fontFamily: "RadioCanada",
+      color: COLOR_WHITE,
+      fontWeight: FontWeight.w600,
+      fontSize: 12),
+  // name
+  headline2: TextStyle(
+      fontFamily: "RadioCanada",
+      color: COLOR_WHITE,
+      fontWeight: FontWeight.bold,
+      fontSize: 24),
+  // info
+  headline3: TextStyle(
+      fontFamily: "RadioCanada",
+      color: COLOR_WHITE,
+      fontWeight: FontWeight.w500,
+      fontSize: 14),
+  // Follow
+  headline4: TextStyle(
+      fontFamily: "RadioCanada",
+      color: COLOR_WHITE,
+      fontWeight: FontWeight.w800,
+      fontSize: 14),
+);

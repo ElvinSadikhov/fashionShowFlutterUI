@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:ui_task_1/custom/border_icon.dart';
 import 'package:ui_task_1/sample_data.dart';
@@ -104,8 +102,8 @@ class MainScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                PersonItem(itemData: FA_DATA[0]),
-                PersonItem(itemData: FA_DATA[1])
+                PersonItem(itemData: FA_MAIN_PAGE_DATA[0]),
+                PersonItem(itemData: FA_MAIN_PAGE_DATA[1])
               ],
             ),
           ),
@@ -125,7 +123,7 @@ class MainScreen extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(25),
                 child: Image.asset(
-                  FA_DATA[2]["image"]!,
+                  FA_MAIN_PAGE_DATA[2]["image"]!,
                   fit: BoxFit.cover,
                 ),
               ),
