@@ -52,29 +52,35 @@ class SecondScreen extends StatelessWidget {
                 addVerticalSpace(80),
                 Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: ProfileInfo(
-                          child: const Icon(Icons.message_outlined,
-                              color: COLOR_WHITE),
-                          text: FA_SECOND_PAGE_DATA["messages count"]!,
-                          height: 30,
-                          width: 30,
+                    GestureDetector(
+                      onTap: () => {debugPrint("Comment is being tapped!")},
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: ProfileInfo(
+                            child: const Icon(Icons.message_outlined,
+                                color: COLOR_WHITE),
+                            text: FA_SECOND_PAGE_DATA["comments count"]!,
+                            height: 30,
+                            width: 30,
+                          ),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: ProfileInfo(
-                          child: const Icon(Icons.favorite_border,
-                              color: COLOR_WHITE),
-                          text: FA_SECOND_PAGE_DATA["likes count"]!,
-                          height: 30,
-                          width: 30,
+                    GestureDetector(
+                      onTap: () => {debugPrint("Like is being tapped")},
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: ProfileInfo(
+                            child: const Icon(Icons.favorite_border,
+                                color: COLOR_WHITE),
+                            text: FA_SECOND_PAGE_DATA["likes count"]!,
+                            height: 30,
+                            width: 30,
+                          ),
                         ),
                       ),
                     ),
@@ -147,33 +153,37 @@ class SecondScreen extends StatelessWidget {
                             topRight: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                           ),
-                          child: Container(
-                            color: COLOR_RED.shade900,
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Row(
-                                children: [
-                                  addHorizontalSpace(5),
-                                  Text(
-                                    "Follow",
-                                    style: themeData.textTheme.headline4,
-                                  ),
-                                  addHorizontalSpace(10),
-                                  Container(
-                                    decoration: const BoxDecoration(
-                                        color: COLOR_WHITE,
-                                        shape: BoxShape.circle),
-                                    child: const Padding(
-                                      padding: EdgeInsets.all(3.0),
-                                      child: Icon(
-                                        Icons.add,
-                                        color: COLOR_BLACK,
-                                        size: 12,
+                          child: GestureDetector(
+                            onTap: () =>
+                                {debugPrint("FollowButton is being tapped!")},
+                            child: Container(
+                              color: COLOR_RED.shade900,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  children: [
+                                    addHorizontalSpace(5),
+                                    Text(
+                                      "Follow",
+                                      style: themeData.textTheme.headline4,
+                                    ),
+                                    addHorizontalSpace(10),
+                                    Container(
+                                      decoration: const BoxDecoration(
+                                          color: COLOR_WHITE,
+                                          shape: BoxShape.circle),
+                                      child: const Padding(
+                                        padding: EdgeInsets.all(3.0),
+                                        child: Icon(
+                                          Icons.add,
+                                          color: COLOR_BLACK,
+                                          size: 12,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  addHorizontalSpace(3),
-                                ],
+                                    addHorizontalSpace(3),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

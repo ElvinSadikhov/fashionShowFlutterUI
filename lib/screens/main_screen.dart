@@ -56,7 +56,7 @@ class MainScreen extends StatelessWidget {
                     ),
                   )),
               Padding(
-                padding: EdgeInsets.only(left: padding),
+                padding: const EdgeInsets.only(left: padding),
                 child: SizedBox(
                   child: Text(
                     "2021 Fashion show in Paris",

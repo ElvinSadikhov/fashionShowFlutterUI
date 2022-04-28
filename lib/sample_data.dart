@@ -16,7 +16,7 @@ const FA_MAIN_PAGE_DATA = [
 
 const FA_SECOND_PAGE_DATA = {
   "image": "assets/images/ui_task_1_4.jpg",
-  "messages count": "3",
+  "comments count": "3",
   "likes count": "579",
   "watched count": "18",
   "name": "Milla Jovovich",
