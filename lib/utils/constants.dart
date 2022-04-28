@@ -12,7 +12,7 @@ const COLOR_PURPLE = Color.fromRGBO(103, 65, 209, 100);
 
 const COLOR_RED = Colors.red;
 
-const TextTheme TEXT_THEME_FIRST_PAGE = TextTheme(
+const TextTheme TEXT_THEME_FIRST_SCREEN = TextTheme(
     // for Week in Paris
     headline1: TextStyle(
         fontFamily: "RadioCanada",
@@ -50,7 +50,7 @@ const TextTheme TEXT_THEME_FIRST_PAGE = TextTheme(
         fontWeight: FontWeight.w500,
         fontSize: 15));
 
-const TextTheme TEXT_THEME_SECOND_PAGE = TextTheme(
+const TextTheme TEXT_THEME_SECOND_SCREEN = TextTheme(
   // for messages, likes, watched counts
   headline1: TextStyle(
       fontFamily: "RadioCanada",
