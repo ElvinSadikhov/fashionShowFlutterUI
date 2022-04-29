@@ -10,9 +10,9 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          primaryColor: COLOR_WHITE, textTheme: TEXT_THEME_FIRST_PAGE),
+          primaryColor: COLOR_WHITE, textTheme: TEXT_THEME_FIRST_SCREEN),
       home: const MainScreen(),
-      // theme: ThemeData(textTheme: TEXT_THEME_SECOND_PAGE),
+      // theme: ThemeData(textTheme: TEXT_THEME_SECOND_SCREEN),
       // home: const SecondScreen(),
     );
   }

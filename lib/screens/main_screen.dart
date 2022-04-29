@@ -20,22 +20,24 @@ class MainScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 BorderIcon(
                   height: 40,
                   width: 40,
-                  child: Icon(
+                  child: const Icon(
                     Icons.short_text_rounded,
                     size: 35,
                   ),
+                  onTap: () => debugPrint("MenuButton is being tapped!"),
                 ),
                 BorderIcon(
                   height: 40,
                   width: 40,
-                  child: Icon(
+                  child: const Icon(
                     Icons.search,
                     size: 35,
                   ),
+                  onTap: () => debugPrint("SearchButton is being tapped!"),
                 )
               ],
             ),
@@ -77,16 +79,17 @@ class MainScreen extends StatelessWidget {
                   style: themeData.textTheme.headline3,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: padding),
-                child: BorderIcon(
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: padding),
+                  child: BorderIcon(
                     height: 40,
                     width: 40,
-                    child: Icon(
+                    child: const Icon(
                       Icons.filter_list,
                       size: 25,
-                    )),
-              )
+                    ),
+                    onTap: () => debugPrint("FilterButton is being tapped!"),
+                  ))
             ],
           ),
           addVerticalSpace(5),
@@ -94,8 +97,15 @@ class MainScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
             child: Row(
-                children: ["Recommended", "New Models", "2020 Show"]
-                    .map((filter) => ChoiceOption(text: filter))
+                children: [
+              ["Recommended", "Recommended is being tapped!"],
+              ["New Models", "NewModels is being tapped!"],
+              ["2020 Show", "2020Show is being tapped!"]
+            ]
+                    .map((args) => ChoiceOption(
+                          text: args[0],
+                          onTapMessage: args[1],
+                        ))
                     .toList()),
           ),
           addVerticalSpace(12),
@@ -139,15 +149,17 @@ class MainScreen extends StatelessWidget {
 
 class ChoiceOption extends StatelessWidget {
   final String text;
+  final String onTapMessage;
 
-  const ChoiceOption({Key? key, required this.text}) : super(key: key);
+  const ChoiceOption({Key? key, required this.text, required this.onTapMessage})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
 
     return GestureDetector(
-      onTap: () => {debugPrint("ChoiceOption is being tapped!")},
+      onTap: () => debugPrint(onTapMessage),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),

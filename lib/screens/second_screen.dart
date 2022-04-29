@@ -30,22 +30,27 @@ class SecondScreen extends StatelessWidget {
                 addVerticalSpace(15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: BorderIcon(
-                          child: Icon(Icons.arrow_back_ios_rounded,
-                              color: COLOR_WHITE),
-                          height: 30,
-                          width: 30),
+                        child: const Icon(Icons.arrow_back_ios_rounded,
+                            color: COLOR_WHITE),
+                        height: 30,
+                        width: 30,
+                        onTap: () => debugPrint("BackButton is being tapped!"),
+                      ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: BorderIcon(
-                          child:
-                              Icon(Icons.more_vert_rounded, color: COLOR_WHITE),
-                          height: 30,
-                          width: 30),
+                        child: const Icon(Icons.more_vert_rounded,
+                            color: COLOR_WHITE),
+                        height: 30,
+                        width: 30,
+                        onTap: () =>
+                            debugPrint("OptionButton is being tapped!"),
+                      ),
                     ),
                   ],
                 ),
@@ -64,6 +69,8 @@ class SecondScreen extends StatelessWidget {
                             text: FA_SECOND_PAGE_DATA["comments count"]!,
                             height: 30,
                             width: 30,
+                            onTap: () =>
+                                debugPrint("CommentButton is being tapped!"),
                           ),
                         ),
                       ),
@@ -80,6 +87,8 @@ class SecondScreen extends StatelessWidget {
                             text: FA_SECOND_PAGE_DATA["likes count"]!,
                             height: 30,
                             width: 30,
+                            onTap: () =>
+                                debugPrint("LikeButton is being tapped!"),
                           ),
                         ),
                       ),
@@ -94,6 +103,7 @@ class SecondScreen extends StatelessWidget {
                           text: FA_SECOND_PAGE_DATA["watched count"]!,
                           height: 30,
                           width: 30,
+                          onTap: () => {},
                         ),
                       ),
                     )
@@ -203,13 +213,15 @@ class ProfileInfo extends StatelessWidget {
   final Widget child;
   final double height, width;
   final String text;
+  final Function onTap;
 
   const ProfileInfo(
       {Key? key,
       required this.child,
       required this.height,
       required this.width,
-      required this.text})
+      required this.text,
+      required this.onTap})
       : super(key: key);
 
   @override
@@ -220,7 +232,12 @@ class ProfileInfo extends StatelessWidget {
       width: width,
       child: Column(
         children: [
-          BorderIcon(child: child, height: height, width: width),
+          BorderIcon(
+            child: child,
+            height: height,
+            width: width,
+            onTap: onTap,
+          ),
           Center(
             child: Text(
               text,
