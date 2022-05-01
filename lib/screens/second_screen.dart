@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_task_1/sample_data.dart';
 import 'package:ui_task_1/custom/border_icon.dart';
 import 'package:ui_task_1/utils/constants.dart';
-import 'package:ui_task_1/utils/widget_functions.dart';
+import 'package:ui_task_1/utils/widget_methods.dart';
 
 class SecondScreen extends StatelessWidget {
   const SecondScreen({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class SecondScreen extends StatelessWidget {
           children: [
             // photo
             Image.asset(
-              FA_SECOND_PAGE_DATA["image"]!,
+              AppData.getSecondScreenData.getModel.getImage,
               height: sizeOfScreen.height,
               width: sizeOfScreen.width,
               fit: BoxFit.cover,
@@ -27,68 +27,81 @@ class SecondScreen extends StatelessWidget {
             //everything else
             Column(
               children: [
-                addVerticalSpace(15),
+                WidgetMethods.verticalSpace(15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: BorderIcon(
-                        child: const Icon(Icons.arrow_back_ios_rounded,
-                            color: COLOR_WHITE),
+                        child: Icon(Icons.arrow_back_ios_rounded,
+                            color: AppConstants.getColors.COLOR_WHITE),
                         height: 30,
                         width: 30,
-                        onTap: () => debugPrint("BackButton is being tapped!"),
+                        onTap: () {
+                          debugPrint("BackButton is being tapped!");
+                        },
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: BorderIcon(
-                        child: const Icon(Icons.more_vert_rounded,
-                            color: COLOR_WHITE),
+                        child: Icon(Icons.more_vert_rounded,
+                            color: AppConstants.getColors.COLOR_WHITE),
                         height: 30,
                         width: 30,
-                        onTap: () =>
-                            debugPrint("OptionButton is being tapped!"),
+                        onTap: () {
+                          debugPrint("OptionButton is being tapped!");
+                        },
                       ),
                     ),
                   ],
                 ),
-                addVerticalSpace(80),
+                WidgetMethods.verticalSpace(80),
                 Column(
                   children: [
                     GestureDetector(
-                      onTap: () => {debugPrint("Comment is being tapped!")},
+                      onTap: () {
+                        debugPrint("Comment is being tapped!");
+                      },
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: ProfileInfo(
-                            child: const Icon(Icons.message_outlined,
-                                color: COLOR_WHITE),
-                            text: FA_SECOND_PAGE_DATA["comments count"]!,
+                            child: Icon(Icons.message_outlined,
+                                color: AppConstants.getColors.COLOR_WHITE),
+                            text: AppData
+                                .getSecondScreenData.getModel.getCommentsCount
+                                .toString(),
                             height: 30,
                             width: 30,
-                            onTap: () =>
-                                debugPrint("CommentButton is being tapped!"),
+                            onTap: () {
+                              debugPrint("CommentButton is being tapped!");
+                            },
                           ),
                         ),
                       ),
                     ),
                     GestureDetector(
-                      onTap: () => {debugPrint("Like is being tapped")},
+                      onTap: () {
+                        debugPrint("Like is being tapped");
+                      },
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: ProfileInfo(
-                            child: const Icon(Icons.favorite_border,
-                                color: COLOR_WHITE),
-                            text: FA_SECOND_PAGE_DATA["likes count"]!,
+                            child: Icon(Icons.favorite_border,
+                                color: AppConstants.getColors.COLOR_WHITE),
+                            text: AppData
+                                .getSecondScreenData.getModel.getLikesCount
+                                .toString(),
                             height: 30,
                             width: 30,
-                            onTap: () =>
-                                debugPrint("LikeButton is being tapped!"),
+                            onTap: () {
+                              debugPrint("LikeButton is being tapped!");
+                            },
                           ),
                         ),
                       ),
@@ -98,18 +111,20 @@ class SecondScreen extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: ProfileInfo(
-                          child: const Icon(Icons.watch_later_outlined,
-                              color: COLOR_WHITE),
-                          text: FA_SECOND_PAGE_DATA["watched count"]!,
+                          child: Icon(Icons.watch_later_outlined,
+                              color: AppConstants.getColors.COLOR_WHITE),
+                          text: AppData
+                              .getSecondScreenData.getModel.getWatchedCount
+                              .toString(),
                           height: 30,
                           width: 30,
-                          onTap: () => {},
+                          onTap: () {},
                         ),
                       ),
                     )
                   ],
                 ),
-                addVerticalSpace(215),
+                WidgetMethods.verticalSpace(215),
                 Stack(
                   children: [
                     Padding(
@@ -120,7 +135,8 @@ class SecondScreen extends StatelessWidget {
                           filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
                           child: Container(
                             height: 200,
-                            color: COLOR_GREY.withOpacity(0.5),
+                            color: AppConstants.getColors.COLOR_GREY
+                                .withOpacity(0.5),
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(8, 15, 8, 15),
                               child: Column(
@@ -131,19 +147,21 @@ class SecondScreen extends StatelessWidget {
                                       padding: const EdgeInsets.fromLTRB(
                                           15, 10, 0, 0),
                                       child: Text(
-                                        FA_SECOND_PAGE_DATA["name"]!,
+                                        AppData.getSecondScreenData.getModel
+                                            .getName!,
                                         style: themeData.textTheme.headline2,
                                       ),
                                     ),
                                   ),
-                                  addVerticalSpace(20),
+                                  WidgetMethods.verticalSpace(20),
                                   Align(
                                       alignment: Alignment.centerLeft,
                                       child: Padding(
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 15),
                                         child: Text(
-                                          FA_SECOND_PAGE_DATA["info"]!,
+                                          AppData.getSecondScreenData.getModel
+                                              .getDescription!,
                                           style: themeData.textTheme.headline3,
                                         ),
                                       ))
@@ -164,34 +182,37 @@ class SecondScreen extends StatelessWidget {
                             bottomRight: Radius.circular(20),
                           ),
                           child: GestureDetector(
-                            onTap: () =>
-                                {debugPrint("FollowButton is being tapped!")},
+                            onTap: () {
+                              debugPrint("FollowButton is being tapped!");
+                            },
                             child: Container(
-                              color: COLOR_RED.shade900,
+                              color: AppConstants.getColors.COLOR_RED.shade900,
                               child: Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: Row(
                                   children: [
-                                    addHorizontalSpace(5),
+                                    WidgetMethods.horizontalSpace(5),
                                     Text(
                                       "Follow",
                                       style: themeData.textTheme.headline4,
                                     ),
-                                    addHorizontalSpace(10),
+                                    WidgetMethods.horizontalSpace(10),
                                     Container(
-                                      decoration: const BoxDecoration(
-                                          color: COLOR_WHITE,
+                                      decoration: BoxDecoration(
+                                          color: AppConstants
+                                              .getColors.COLOR_WHITE,
                                           shape: BoxShape.circle),
-                                      child: const Padding(
-                                        padding: EdgeInsets.all(3.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(3.0),
                                         child: Icon(
                                           Icons.add,
-                                          color: COLOR_BLACK,
+                                          color: AppConstants
+                                              .getColors.COLOR_BLACK,
                                           size: 12,
                                         ),
                                       ),
                                     ),
-                                    addHorizontalSpace(3),
+                                    WidgetMethods.horizontalSpace(3),
                                   ],
                                 ),
                               ),
@@ -210,7 +231,7 @@ class SecondScreen extends StatelessWidget {
 }
 
 class ProfileInfo extends StatelessWidget {
-  final Widget child;
+  final Icon child;
   final double height, width;
   final String text;
   final Function onTap;
@@ -241,8 +262,7 @@ class ProfileInfo extends StatelessWidget {
           Center(
             child: Text(
               text,
-              style:
-                  themeData.textTheme.headline1!.copyWith(color: Colors.black),
+              style: themeData.textTheme.headline1,
             ),
           )
         ],
