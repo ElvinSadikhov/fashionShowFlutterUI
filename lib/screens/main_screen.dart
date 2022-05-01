@@ -129,7 +129,7 @@ class MainScreen extends StatelessWidget {
             child: DecoratedBox(
               decoration: BoxDecoration(boxShadow: [
                 BoxShadow(
-                    color: AppConstants.getColors.COLOR_PURPLE
+                    color: AppConstants.getColors.purple
                         .withRed(90)
                         .withAlpha(120),
                     spreadRadius: 5,
@@ -170,7 +170,7 @@ class ChoiceOption extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
-          color: AppConstants.getColors.COLOR_WHITE,
+          color: AppConstants.getColors.white,
         ),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
         margin: const EdgeInsets.only(left: 25),
@@ -198,9 +198,7 @@ class PersonItem extends StatelessWidget {
         DecoratedBox(
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
-                color: AppConstants.getColors.COLOR_PURPLE
-                    .withRed(90)
-                    .withAlpha(120),
+                color: AppConstants.getColors.purple.withRed(90).withAlpha(120),
                 spreadRadius: 5,
                 blurRadius: 25,
                 blurStyle: BlurStyle.normal,

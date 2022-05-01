@@ -10,7 +10,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-            primaryColor: AppConstants.getColors.COLOR_WHITE,
+            primaryColor: AppConstants.getColors.white,
             textTheme: AppConstants.getThemes.firstScreen),
         home: const MainScreen());
     // return MaterialApp(

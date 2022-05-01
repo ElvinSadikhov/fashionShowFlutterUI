@@ -15,15 +15,15 @@ class AppConstants {
 class AppColors {
   AppColors._();
 
-  final COLOR_WHITE = Colors.white;
+  final white = Colors.white;
 
-  final COLOR_BLACK = Colors.black87;
+  final black = Colors.black87;
 
-  final COLOR_GREY = Colors.grey;
+  final grey = Colors.grey;
 
-  final COLOR_PURPLE = const Color.fromRGBO(103, 65, 209, 100);
+  final purple = const Color.fromRGBO(103, 65, 209, 100);
 
-  final COLOR_RED = Colors.red;
+  final red = Colors.red;
 }
 
 class AppThemes {
@@ -33,37 +33,37 @@ class AppThemes {
       // for Week in Paris
       headline1: TextStyle(
           fontFamily: "RadioCanada",
-          color: AppConstants.getColors.COLOR_PURPLE,
+          color: AppConstants.getColors.purple,
           fontWeight: FontWeight.bold,
           fontSize: 36),
       // 2021 Fashion show in Paris
       headline2: TextStyle(
           fontFamily: "RadioCanada",
-          color: AppConstants.getColors.COLOR_BLACK,
+          color: AppConstants.getColors.black,
           fontWeight: FontWeight.w500,
           fontSize: 13),
       // Explore
       headline3: TextStyle(
           fontFamily: "RadioCanada",
-          color: AppConstants.getColors.COLOR_BLACK,
+          color: AppConstants.getColors.black,
           fontWeight: FontWeight.bold,
           fontSize: 26),
       // scroll view
       headline4: TextStyle(
           fontFamily: "RadioCanada",
-          color: AppConstants.getColors.COLOR_BLACK,
+          color: AppConstants.getColors.black,
           fontWeight: FontWeight.w700,
           fontSize: 14),
       // -character names
       headline5: TextStyle(
           fontFamily: "RadioCanada",
-          color: AppConstants.getColors.COLOR_BLACK,
+          color: AppConstants.getColors.black,
           fontWeight: FontWeight.bold,
           fontSize: 16),
       // -city name
       headline6: TextStyle(
           fontFamily: "RadioCanada",
-          color: AppConstants.getColors.COLOR_BLACK,
+          color: AppConstants.getColors.black,
           fontWeight: FontWeight.w500,
           fontSize: 15));
 
@@ -71,25 +71,25 @@ class AppThemes {
     // for messages, likes, watched counts
     headline1: TextStyle(
         fontFamily: "RadioCanada",
-        color: AppConstants.getColors.COLOR_WHITE,
+        color: AppConstants.getColors.white,
         fontWeight: FontWeight.w600,
         fontSize: 12),
     // name
     headline2: TextStyle(
         fontFamily: "RadioCanada",
-        color: AppConstants.getColors.COLOR_WHITE,
+        color: AppConstants.getColors.white,
         fontWeight: FontWeight.bold,
         fontSize: 24),
     // info
     headline3: TextStyle(
         fontFamily: "RadioCanada",
-        color: AppConstants.getColors.COLOR_WHITE,
+        color: AppConstants.getColors.white,
         fontWeight: FontWeight.w500,
         fontSize: 14),
     // Follow
     headline4: TextStyle(
         fontFamily: "RadioCanada",
-        color: AppConstants.getColors.COLOR_WHITE,
+        color: AppConstants.getColors.white,
         fontWeight: FontWeight.w800,
         fontSize: 14),
   );

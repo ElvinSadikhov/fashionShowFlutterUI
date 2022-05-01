@@ -35,7 +35,7 @@ class SecondScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: BorderIcon(
                         child: Icon(Icons.arrow_back_ios_rounded,
-                            color: AppConstants.getColors.COLOR_WHITE),
+                            color: AppConstants.getColors.white),
                         height: 30,
                         width: 30,
                         onTap: () {
@@ -47,7 +47,7 @@ class SecondScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: BorderIcon(
                         child: Icon(Icons.more_vert_rounded,
-                            color: AppConstants.getColors.COLOR_WHITE),
+                            color: AppConstants.getColors.white),
                         height: 30,
                         width: 30,
                         onTap: () {
@@ -70,7 +70,7 @@ class SecondScreen extends StatelessWidget {
                           alignment: Alignment.centerLeft,
                           child: ProfileInfo(
                             child: Icon(Icons.message_outlined,
-                                color: AppConstants.getColors.COLOR_WHITE),
+                                color: AppConstants.getColors.white),
                             text: AppData
                                 .getSecondScreenData.getModel.getCommentsCount
                                 .toString(),
@@ -93,7 +93,7 @@ class SecondScreen extends StatelessWidget {
                           alignment: Alignment.centerLeft,
                           child: ProfileInfo(
                             child: Icon(Icons.favorite_border,
-                                color: AppConstants.getColors.COLOR_WHITE),
+                                color: AppConstants.getColors.white),
                             text: AppData
                                 .getSecondScreenData.getModel.getLikesCount
                                 .toString(),
@@ -112,7 +112,7 @@ class SecondScreen extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: ProfileInfo(
                           child: Icon(Icons.watch_later_outlined,
-                              color: AppConstants.getColors.COLOR_WHITE),
+                              color: AppConstants.getColors.white),
                           text: AppData
                               .getSecondScreenData.getModel.getWatchedCount
                               .toString(),
@@ -135,8 +135,7 @@ class SecondScreen extends StatelessWidget {
                           filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
                           child: Container(
                             height: 200,
-                            color: AppConstants.getColors.COLOR_GREY
-                                .withOpacity(0.5),
+                            color: AppConstants.getColors.grey.withOpacity(0.5),
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(8, 15, 8, 15),
                               child: Column(
@@ -186,7 +185,7 @@ class SecondScreen extends StatelessWidget {
                               debugPrint("FollowButton is being tapped!");
                             },
                             child: Container(
-                              color: AppConstants.getColors.COLOR_RED.shade900,
+                              color: AppConstants.getColors.red.shade900,
                               child: Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: Row(
@@ -199,15 +198,13 @@ class SecondScreen extends StatelessWidget {
                                     WidgetMethods.horizontalSpace(10),
                                     Container(
                                       decoration: BoxDecoration(
-                                          color: AppConstants
-                                              .getColors.COLOR_WHITE,
+                                          color: AppConstants.getColors.white,
                                           shape: BoxShape.circle),
                                       child: Padding(
                                         padding: const EdgeInsets.all(3.0),
                                         child: Icon(
                                           Icons.add,
-                                          color: AppConstants
-                                              .getColors.COLOR_BLACK,
+                                          color: AppConstants.getColors.black,
                                           size: 12,
                                         ),
                                       ),
