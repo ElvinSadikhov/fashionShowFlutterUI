@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class AppConstants {
   AppConstants._();
 
-  static final AppColors _colors = AppColors._();
-  static final AppThemes _themes = AppThemes._();
-  static final AppPaddings _paddings = AppPaddings._();
+  static final _AppColors _colors = _AppColors._();
+  static final _AppThemes _themes = _AppThemes._();
+  static final _AppPaddings _paddings = _AppPaddings._();
 
-  static AppColors get getColors => _colors;
-  static AppThemes get getThemes => _themes;
-  static AppPaddings get getPaddings => _paddings;
+  static _AppColors get getColors => _colors;
+  static _AppThemes get getThemes => _themes;
+  static _AppPaddings get getPaddings => _paddings;
 }
 
-class AppColors {
-  AppColors._();
+class _AppColors {
+  _AppColors._();
 
   final white = Colors.white;
 
@@ -26,8 +26,8 @@ class AppColors {
   final red = Colors.red;
 }
 
-class AppThemes {
-  AppThemes._();
+class _AppThemes {
+  _AppThemes._();
 
   final TextTheme firstScreen = TextTheme(
       // for Week in Paris
@@ -95,8 +95,8 @@ class AppThemes {
   );
 }
 
-class AppPaddings {
-  AppPaddings._();
+class _AppPaddings {
+  _AppPaddings._();
 
   final double kDefaultPadding = 25;
 }

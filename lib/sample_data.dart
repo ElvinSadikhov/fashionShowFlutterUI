@@ -1,15 +1,15 @@
 class AppData {
   AppData._();
 
-  static final MainScreenData _mainScreen = MainScreenData._();
-  static final SecondScreenData _secondScreen = SecondScreenData._();
+  static final _MainScreenData _mainScreen = _MainScreenData._();
+  static final _SecondScreenData _secondScreen = _SecondScreenData._();
 
-  static MainScreenData get getMainScreenData => _mainScreen;
-  static SecondScreenData get getSecondScreenData => _secondScreen;
+  static _MainScreenData get getMainScreenData => _mainScreen;
+  static _SecondScreenData get getSecondScreenData => _secondScreen;
 }
 
-class MainScreenData {
-  MainScreenData._();
+class _MainScreenData {
+  _MainScreenData._();
 
   final List<ModelShortcut> _models = [
     ModelShortcut(
@@ -26,10 +26,10 @@ class MainScreenData {
   List<ModelShortcut> get getModels => _models;
 }
 
-class SecondScreenData {
-  SecondScreenData._();
+class _SecondScreenData {
+  _SecondScreenData._();
 
-  final Model _model = Model(
+  final _Model _model = _Model(
       image: "assets/images/ui_task_1_4.jpg",
       name: "Milla Jovovich",
       city: "Baku",
@@ -39,7 +39,7 @@ class SecondScreenData {
       commentsCount: 3,
       watchedCount: 18);
 
-  Model get getModel => _model;
+  _Model get getModel => _model;
 }
 
 class ModelShortcut {
@@ -58,13 +58,13 @@ class ModelShortcut {
   String? get getCity => _city;
 }
 
-class Model extends ModelShortcut {
+class _Model extends ModelShortcut {
   String? _description;
   int? _likesCount;
   int? _commentsCount;
   int? _watchedCount;
 
-  Model(
+  _Model(
       {required image,
       required name,
       required city,
