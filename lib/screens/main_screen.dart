@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_task_1/custom/border_icon.dart';
 import 'package:ui_task_1/sample_data.dart';
@@ -11,7 +10,6 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
-    const double padding = 25;
 
     return SafeArea(
         child: Scaffold(
@@ -49,7 +47,8 @@ class MainScreen extends StatelessWidget {
               Container(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: padding),
+                    padding: EdgeInsets.only(
+                        left: AppConstants.getPaddings.kDefaultPadding),
                     child: SizedBox(
                       child: Text(
                         "Week in Paris",
@@ -74,14 +73,16 @@ class MainScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: padding),
+                padding: EdgeInsets.symmetric(
+                    horizontal: AppConstants.getPaddings.kDefaultPadding),
                 child: Text(
                   "Explore",
                   style: themeData.textTheme.headline3,
                 ),
               ),
               Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: padding),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppConstants.getPaddings.kDefaultPadding),
                   child: BorderIcon(
                     height: 40,
                     width: 40,
