@@ -1,78 +1,102 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
+class AppConstants {
+  AppConstants._();
 
-const COLOR_WHITE = Colors.white;
+  static final AppColors _colors = AppColors._();
+  static final AppThemes _themes = AppThemes._();
+  static final AppPaddings _paddings = AppPaddings._();
 
-const COLOR_BLACK = Colors.black87;
+  static AppColors get getColors => _colors;
+  static AppThemes get getThemes => _themes;
+  static AppPaddings get getPaddings => _paddings;
+}
 
-const COLOR_GREY = Colors.grey;
+class AppColors {
+  AppColors._();
 
-const COLOR_PURPLE = Color.fromRGBO(103, 65, 209, 100);
+  final COLOR_WHITE = Colors.white;
 
-const COLOR_RED = Colors.red;
+  final COLOR_BLACK = Colors.black87;
 
-const TextTheme TEXT_THEME_FIRST_SCREEN = TextTheme(
-    // for Week in Paris
+  final COLOR_GREY = Colors.grey;
+
+  final COLOR_PURPLE = const Color.fromRGBO(103, 65, 209, 100);
+
+  final COLOR_RED = Colors.red;
+}
+
+class AppThemes {
+  AppThemes._();
+
+  final TextTheme firstScreen = TextTheme(
+      // for Week in Paris
+      headline1: TextStyle(
+          fontFamily: "RadioCanada",
+          color: AppConstants.getColors.COLOR_PURPLE,
+          fontWeight: FontWeight.bold,
+          fontSize: 36),
+      // 2021 Fashion show in Paris
+      headline2: TextStyle(
+          fontFamily: "RadioCanada",
+          color: AppConstants.getColors.COLOR_BLACK,
+          fontWeight: FontWeight.w500,
+          fontSize: 13),
+      // Explore
+      headline3: TextStyle(
+          fontFamily: "RadioCanada",
+          color: AppConstants.getColors.COLOR_BLACK,
+          fontWeight: FontWeight.bold,
+          fontSize: 26),
+      // scroll view
+      headline4: TextStyle(
+          fontFamily: "RadioCanada",
+          color: AppConstants.getColors.COLOR_BLACK,
+          fontWeight: FontWeight.w700,
+          fontSize: 14),
+      // -character names
+      headline5: TextStyle(
+          fontFamily: "RadioCanada",
+          color: AppConstants.getColors.COLOR_BLACK,
+          fontWeight: FontWeight.bold,
+          fontSize: 16),
+      // -city name
+      headline6: TextStyle(
+          fontFamily: "RadioCanada",
+          color: AppConstants.getColors.COLOR_BLACK,
+          fontWeight: FontWeight.w500,
+          fontSize: 15));
+
+  final TextTheme secondScreen = TextTheme(
+    // for messages, likes, watched counts
     headline1: TextStyle(
         fontFamily: "RadioCanada",
-        color: COLOR_PURPLE,
-        fontWeight: FontWeight.bold,
-        fontSize: 36),
-    // 2021 Fashion show in Paris
+        color: AppConstants.getColors.COLOR_WHITE,
+        fontWeight: FontWeight.w600,
+        fontSize: 12),
+    // name
     headline2: TextStyle(
         fontFamily: "RadioCanada",
-        color: COLOR_BLACK,
-        fontWeight: FontWeight.w500,
-        fontSize: 13),
-    // Explore
+        color: AppConstants.getColors.COLOR_WHITE,
+        fontWeight: FontWeight.bold,
+        fontSize: 24),
+    // info
     headline3: TextStyle(
         fontFamily: "RadioCanada",
-        color: COLOR_BLACK,
-        fontWeight: FontWeight.bold,
-        fontSize: 26),
-    // scroll view
+        color: AppConstants.getColors.COLOR_WHITE,
+        fontWeight: FontWeight.w500,
+        fontSize: 14),
+    // Follow
     headline4: TextStyle(
         fontFamily: "RadioCanada",
-        color: COLOR_BLACK,
-        fontWeight: FontWeight.w700,
+        color: AppConstants.getColors.COLOR_WHITE,
+        fontWeight: FontWeight.w800,
         fontSize: 14),
-    // -character names
-    headline5: TextStyle(
-        fontFamily: "RadioCanada",
-        color: COLOR_BLACK,
-        fontWeight: FontWeight.bold,
-        fontSize: 16),
-    // -city name
-    headline6: TextStyle(
-        fontFamily: "RadioCanada",
-        color: COLOR_BLACK,
-        fontWeight: FontWeight.w500,
-        fontSize: 15));
+  );
+}
 
-const TextTheme TEXT_THEME_SECOND_SCREEN = TextTheme(
-  // for messages, likes, watched counts
-  headline1: TextStyle(
-      fontFamily: "RadioCanada",
-      color: COLOR_WHITE,
-      fontWeight: FontWeight.w600,
-      fontSize: 12),
-  // name
-  headline2: TextStyle(
-      fontFamily: "RadioCanada",
-      color: COLOR_WHITE,
-      fontWeight: FontWeight.bold,
-      fontSize: 24),
-  // info
-  headline3: TextStyle(
-      fontFamily: "RadioCanada",
-      color: COLOR_WHITE,
-      fontWeight: FontWeight.w500,
-      fontSize: 14),
-  // Follow
-  headline4: TextStyle(
-      fontFamily: "RadioCanada",
-      color: COLOR_WHITE,
-      fontWeight: FontWeight.w800,
-      fontSize: 14),
-);
+class AppPaddings {
+  AppPaddings._();
+
+  final double kDefaultPadding = 25;
+}

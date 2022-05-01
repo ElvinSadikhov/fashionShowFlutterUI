@@ -1,8 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_task_1/custom/border_icon.dart';
 import 'package:ui_task_1/sample_data.dart';
 import 'package:ui_task_1/utils/constants.dart';
-import 'package:ui_task_1/utils/widget_functions.dart';
+import 'package:ui_task_1/utils/widget_methods.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -22,27 +23,26 @@ class MainScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 BorderIcon(
-                  height: 40,
-                  width: 40,
-                  child: const Icon(
-                    Icons.short_text_rounded,
-                    size: 35,
-                  ),
-                  onTap: () => debugPrint("MenuButton is being tapped!"),
-                ),
+                    child: const Icon(
+                      Icons.short_text_rounded,
+                      size: 35,
+                    ),
+                    onTap: () {
+                      debugPrint("MenuButton is being tapped!");
+                    }),
                 BorderIcon(
-                  height: 40,
-                  width: 40,
                   child: const Icon(
                     Icons.search,
                     size: 35,
                   ),
-                  onTap: () => debugPrint("SearchButton is being tapped!"),
+                  onTap: () {
+                    debugPrint("SearchButton is being tapped!");
+                  },
                 )
               ],
             ),
           ),
-          addVerticalSpace(15),
+          WidgetMethods.verticalSpace(15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -58,7 +58,8 @@ class MainScreen extends StatelessWidget {
                     ),
                   )),
               Padding(
-                padding: const EdgeInsets.only(left: padding),
+                padding: EdgeInsets.only(
+                    left: AppConstants.getPaddings.kDefaultPadding),
                 child: SizedBox(
                   child: Text(
                     "2021 Fashion show in Paris",
@@ -68,7 +69,7 @@ class MainScreen extends StatelessWidget {
               )
             ],
           ),
-          addVerticalSpace(20),
+          WidgetMethods.verticalSpace(20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -88,11 +89,13 @@ class MainScreen extends StatelessWidget {
                       Icons.filter_list,
                       size: 25,
                     ),
-                    onTap: () => debugPrint("FilterButton is being tapped!"),
+                    onTap: () {
+                      debugPrint("FilterButton is being tapped!");
+                    },
                   ))
             ],
           ),
-          addVerticalSpace(5),
+          WidgetMethods.verticalSpace(5),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
@@ -108,25 +111,27 @@ class MainScreen extends StatelessWidget {
                         ))
                     .toList()),
           ),
-          addVerticalSpace(12),
+          WidgetMethods.verticalSpace(12),
           SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                PersonItem(itemData: FA_MAIN_PAGE_DATA[0]),
-                PersonItem(itemData: FA_MAIN_PAGE_DATA[1])
+                PersonItem(model: AppData.getMainScreenData.getModels[0]),
+                PersonItem(model: AppData.getMainScreenData.getModels[1])
               ],
             ),
           ),
-          addVerticalSpace(20),
+          WidgetMethods.verticalSpace(20),
           SizedBox(
             height: 160,
             width: 330,
             child: DecoratedBox(
               decoration: BoxDecoration(boxShadow: [
                 BoxShadow(
-                    color: COLOR_PURPLE.withRed(90).withAlpha(120),
+                    color: AppConstants.getColors.COLOR_PURPLE
+                        .withRed(90)
+                        .withAlpha(120),
                     spreadRadius: 5,
                     blurRadius: 25,
                     blurStyle: BlurStyle.normal,
@@ -135,7 +140,7 @@ class MainScreen extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(25),
                 child: Image.asset(
-                  FA_MAIN_PAGE_DATA[2]["image"]!,
+                  AppData.getMainScreenData.getModels[2].getImage,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -159,11 +164,13 @@ class ChoiceOption extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
 
     return GestureDetector(
-      onTap: () => debugPrint(onTapMessage),
+      onTap: () {
+        debugPrint(onTapMessage);
+      },
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
-          color: COLOR_WHITE,
+          color: AppConstants.getColors.COLOR_WHITE,
         ),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
         margin: const EdgeInsets.only(left: 25),
@@ -177,9 +184,9 @@ class ChoiceOption extends StatelessWidget {
 }
 
 class PersonItem extends StatelessWidget {
-  final dynamic itemData;
+  final ModelShortcut model;
 
-  const PersonItem({Key? key, this.itemData}) : super(key: key);
+  const PersonItem({Key? key, required this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -191,7 +198,9 @@ class PersonItem extends StatelessWidget {
         DecoratedBox(
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
-                color: COLOR_PURPLE.withRed(90).withAlpha(120),
+                color: AppConstants.getColors.COLOR_PURPLE
+                    .withRed(90)
+                    .withAlpha(120),
                 spreadRadius: 5,
                 blurRadius: 25,
                 blurStyle: BlurStyle.normal,
@@ -200,29 +209,29 @@ class PersonItem extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(25),
             child: Image.asset(
-              itemData["image"],
+              model.getImage,
               height: 200,
               width: 150,
               fit: BoxFit.cover,
             ),
           ),
         ),
-        addVerticalSpace(15),
+        WidgetMethods.verticalSpace(15),
         Container(
           margin: const EdgeInsets.only(left: 12),
           child: SizedBox(
             child: Text(
-              itemData["name"],
+              model.getName!,
               style: themeData.textTheme.headline5,
             ),
           ),
         ),
-        addVerticalSpace(5),
+        WidgetMethods.verticalSpace(5),
         Container(
             margin: const EdgeInsets.only(left: 12),
             child: SizedBox(
                 child: Text(
-              itemData["city"],
+              model.getCity!,
               style: themeData.textTheme.headline6,
             ))),
       ],
