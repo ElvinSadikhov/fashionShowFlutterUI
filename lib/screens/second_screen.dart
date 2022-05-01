@@ -241,7 +241,8 @@ class ProfileInfo extends StatelessWidget {
           Center(
             child: Text(
               text,
-              style: themeData.textTheme.headline1,
+              style:
+                  themeData.textTheme.headline1!.copyWith(color: Colors.black),
             ),
           )
         ],

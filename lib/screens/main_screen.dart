@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_task_1/custom/border_icon.dart';
 import 'package:ui_task_1/sample_data.dart';
@@ -22,17 +23,14 @@ class MainScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 BorderIcon(
-                  height: 40,
-                  width: 40,
-                  child: const Icon(
-                    Icons.short_text_rounded,
-                    size: 35,
-                  ),
-                  onTap: () => debugPrint("MenuButton is being tapped!"),
-                ),
+                    child: const Icon(
+                      Icons.short_text_rounded,
+                      size: 35,
+                    ),
+                    onTap: () {
+                      debugPrint("MenuButton is being tapped!");
+                    }),
                 BorderIcon(
-                  height: 40,
-                  width: 40,
                   child: const Icon(
                     Icons.search,
                     size: 35,
@@ -42,7 +40,7 @@ class MainScreen extends StatelessWidget {
               ],
             ),
           ),
-          addVerticalSpace(15),
+          verticalSpace(15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -58,7 +56,7 @@ class MainScreen extends StatelessWidget {
                     ),
                   )),
               Padding(
-                padding: const EdgeInsets.only(left: padding),
+                padding: const EdgeInsets.only(left: kDefualtPadding),
                 child: SizedBox(
                   child: Text(
                     "2021 Fashion show in Paris",

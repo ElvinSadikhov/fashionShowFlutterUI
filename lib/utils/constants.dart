@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
 
-const COLOR_WHITE = Colors.white;
+class AppColors {
+  AppColors._();
 
-const COLOR_BLACK = Colors.black87;
+  static const COLOR_WHITE = Colors.white;
 
-const COLOR_GREY = Colors.grey;
+  const COLOR_BLACK = Colors.black87;
 
-const COLOR_PURPLE = Color.fromRGBO(103, 65, 209, 100);
+  const COLOR_GREY = Colors.grey;
 
-const COLOR_RED = Colors.red;
+  const COLOR_PURPLE = Color.fromRGBO(103, 65, 209, 100);
+
+  const COLOR_RED = Colors.red;
+}
 
 const TextTheme TEXT_THEME_FIRST_SCREEN = TextTheme(
     // for Week in Paris
